@@ -13,9 +13,9 @@ const HomeHeader = () => {
           Wybierając nas masz 100% szansy
           {""} na to, <br/> że otrzymasz stronę internetową,która zapewni
           <br/> Twoim klientom {""}
-          <span className="relative ">
+          <span className="relative whitespace-nowrap">
             niesamowite doświadczenia
-            <svg id='animate-length' className="absolute left-3 -bottom-2.5" width="230" height="12" viewBox="0 0 420 16" fill="none" preserveAspectRatio="xMidYMax meet">
+            <svg id='animate-length' className="absolute left-0 -bottom-2.5 w-full" width="230" height="12" viewBox="0 0 420 16" fill="none" preserveAspectRatio="xMidYMax meet">
               <path d="M2 2C25.3232 3.07929 48.5889 4.6047 71.903 5.76081C120.965 8.19371 170.073 9.7166 219.305 9.97162C265.498 10.2109 311.407 8.92785 357.411 6.46797C377.031 5.41888 396.566 4.21724 416 2.28929" stroke="#1A6BE3" strokeWidth="4" strokeLinecap="round"/>
             </svg>
           </span>.

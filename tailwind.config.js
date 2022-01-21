@@ -18,7 +18,8 @@ module.exports = {
           0: '#F7E64E',
           1: '#4EF75F',
           2: '#F74E4E',
-        }
+        },
+        'black-opacity':'#000000CC'
       },
       lineHeight: {
         'tight':'1.175',

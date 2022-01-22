@@ -11,8 +11,8 @@ const HomeHeader = () => {
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
           Wybierając nas masz 100% szansy
-          {""} na to, <br/> że otrzymasz stronę internetową,która zapewni
-          <br/> Twoim klientom {""}
+          {""} na to, że otrzymasz stronę internetową,która zapewni
+          Twoim klientom {""}
           <span className="relative whitespace-nowrap">
             niesamowite doświadczenia
             <svg id='animate-length' className="absolute left-0 -bottom-2.5 w-full" width="230" height="12" viewBox="0 0 420 16" fill="none" preserveAspectRatio="xMidYMax meet">

@@ -17,21 +17,18 @@ export default function Home() {
           text={`Chciałbyś podzielić się swoją pasją z innymi? 
           Znasz odpowiedzi na pytania, które niekoniecznie znają inni? 
           Jeśli jesteś jedną z tych osób to blog będzie idealny dla Ciebie!`}
-          slug={"/offer"}
           />
           <OfferItem 
           title={"Portfolio"}
           text={`Jesteś fotografem, a może jesteś uzdolniony graficznie? 
           Wybierając portfolio będziesz mógł dzielić się swoimi pracami ze światem, 
           a to wszystko w jednym miejscu!`}
-          slug={"/offer"}
           />
           <OfferItem 
           title={"Strona firmy"}
           text={`Chcesz, aby Twoi klienci mogli przyjrzeć się Twoim usługom wygodnie z domu? 
           Strona firmy nie tylko zapewni Twoim klientom wygodę, ale także pozwoli trafić Ci
             do większego grona osób.`}
-          slug={"/offer"}
           />
         </div>
       </section>

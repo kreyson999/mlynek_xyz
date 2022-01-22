@@ -11,7 +11,7 @@ module.exports = {
         'gray': {
           'light' : '#B1B1B1',
           'dark' : '#4C4141',
-          40: '#FAFAFA',
+          40: '#F8F8F8',
         },
         'custom-black': '#252525', 
         'carousel': {

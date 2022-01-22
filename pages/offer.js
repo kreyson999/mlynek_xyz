@@ -51,7 +51,7 @@ export default function Offer() {
         <div className="flex flex-col">
             <div className="relative aspect-video bg-carousel-0 rounded-2xl">
               <Image
-              src={'/images/pc.png'}
+              src={'/images/kjmm_desktop.png'}
               alt="Blog Demo"
               layout="fill"
               className="object-contain"
@@ -65,7 +65,14 @@ export default function Offer() {
       <section className="bg-gray-40 py-20 mb-32">
         <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="row-start-2 md:row-start-1">
-            <div className="aspect-video bg-carousel-1 rounded-2xl"></div>
+            <div className="relative aspect-video bg-carousel-1 rounded-2xl">
+              <Image
+              src={'/images/comingsoon.png'}
+              alt="Blog Demo"
+              layout="fill"
+              className="object-contain"
+              />
+            </div>
             <div className="w-full flex justify-center mt-3">
               <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl" target={'_blank'} rel="noreferrer">DEMO</a>
             </div>
@@ -108,7 +115,14 @@ export default function Offer() {
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="aspect-video bg-carousel-2 rounded-2xl"></div>
+          <div className="relative aspect-video bg-carousel-2 rounded-2xl">
+            <Image
+              src={'/images/comingsoon.png'}
+              alt="Blog Demo"
+              layout="fill"
+              className="object-contain"
+              />
+          </div>
           <div className="w-full flex justify-center mt-3">
             <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl " target={'_blank'} rel="noreferrer">DEMO</a>
           </div>

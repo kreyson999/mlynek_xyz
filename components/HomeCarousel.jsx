@@ -16,6 +16,7 @@ const CarouselItem = ({image, color}) => {
           layout="fill"
           alt="Laptop Design"
           className="object-contain"
+          priority
         />
       </div>
     </div>
@@ -74,9 +75,9 @@ const HomeCarousel = () => {
         transform: 'translateX(-50%)',
       }}
       className="max-w-screen-lg xl:max-w-screen-xl px-12 sm:px-0 2xl:max-w-screen-2xl grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 xl:gap-8 relative">
-        <CarouselItem image={'/images/laptop.png'} color={'#F7E64E'}/>
-        <CarouselItem image={'/images/pc.png'} color={'#4EF75F'}/>
-        <CarouselItem image={'/images/mobile.png'} color={'#F74E4E'}/>
+        <CarouselItem image={'/images/shop_laptop.png'} color={'#F7E64E'}/>
+        <CarouselItem image={'/images/kjmm_desktop.png'} color={'#4EF75F'}/>
+        <CarouselItem image={'/images/shop_mobile.png'} color={'#F74E4E'}/>
       </div>
     </div>
   );

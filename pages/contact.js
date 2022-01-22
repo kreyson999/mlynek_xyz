@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FrequentlyAskedQuestions, SectionHeader } from "../components";
+import { FrequentlyAskedQuestions, SectionHeader, SocialMediaLink } from "../components";
 
 function Contact() {
   return (
@@ -15,39 +15,24 @@ function Contact() {
       <section className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 px-6 gap-y-8 md:gap-4 lg:gap-8">
         <div className="flex flex-col space-y-2 row-start-2 md:row-start-1">
           <h2 className="text-xl text-custom-black">Inne formy kontaktu</h2>
-          <a href="https://twitter.com/kreysonfn" className="flex items-center space-x-2 px-2 py-2 border-2 border-blue-light rounded-xl">
-            <div className="grid place-content-center">
-              <Image
-                src={'/icons/twitter.svg'}
-                alt="Skontaktuj się ze mną na Twitter"
-                width={28}
-                height={28}
-              />
-            </div>
-            <span className="text-lg sm:text-base md:text-lg">@kreysonfn</span>
-          </a>
-          <a href="https://www.linkedin.com/in/jakub-m%C5%82ynek-28784522b/" className="flex items-center space-x-2 px-2 py-2 border-2 border-blue-light rounded-xl">
-            <div className="grid place-content-center">
-              <Image
-                src={'/icons/linkedin.svg'}
-                alt="Skontaktuj się ze mną na LinkedIn"
-                width={28}
-                height={28}
-              />
-            </div>
-            <span className="text-lg sm:text-base md:text-lg">Jakub Młynek</span>
-          </a>
-          <a href="https://www.linkedin.com/in/jakub-m%C5%82ynek-28784522b/" className="flex items-center space-x-2 px-2 py-2 border-2 border-blue-light rounded-xl">
-            <div className="grid place-content-center">
-              <Image
-                src={'/icons/mail-blue-light.svg'}
-                alt="Skontaktuj się ze mną przez e-mail"
-                width={28}
-                height={28}
-              />
-            </div>
-            <span className="text-lg sm:text-base md:text-lg">contact@mlynek.xyz</span>
-          </a>
+          <SocialMediaLink
+            title={'@kreysonfn'}
+            platfrom="Twitter"
+            link={"https://twitter.com/kreysonfn"}
+            icon={"/icons/twitter.svg"}
+          />
+          <SocialMediaLink
+            title={'Jakub Młynek'}
+            platfrom="LinkedIn"
+            link={"https://www.linkedin.com/in/jakub-m%C5%82ynek-28784522b/"}
+            icon={"/icons/linkedin.svg"}
+          />
+          <SocialMediaLink
+            title={'contact@mlynek.xyz'}
+            platfrom="E-mail"
+            link={"mailto:contact@mlynek.xyz"}
+            icon={"/icons/mail-blue-light.svg"}
+          />
         </div>
         <div className="bg-blue-dark py-8 px-8 rounded-xl col-span-2">
           <form className="flex flex-col">

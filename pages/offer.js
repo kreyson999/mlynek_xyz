@@ -1,4 +1,4 @@
-import { CustomList, OfferPageItem, SectionHeader, FAQItem } from "../components";
+import { CustomList, OfferPageItem, SectionHeader, FAQItem, FrequentlyAskedQuestions } from "../components";
 import Image from 'next/image'
 
 export default function Offer() {
@@ -110,22 +110,11 @@ export default function Offer() {
         <div className="flex flex-col">
           <div className="aspect-video bg-carousel-2 rounded-2xl"></div>
           <div className="w-full flex justify-center mt-3">
-            <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl" target={'_blank'} rel="noreferrer">DEMO</a>
+            <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl " target={'_blank'} rel="noreferrer">DEMO</a>
           </div>
         </div>
       </section>
-      <section className="max-w-screen-lg mx-auto px-6 mb-32">
-        <SectionHeader title={"Pytania"} text={`
-          Masz jakieś pytanie? Sprawdź, czy nie udzieliliśmy już na nie odpowiedzi poniżej. Jeśli nie znajdziesz to co cię nurtuje nie bój się do nas napisać!
-        `}
-        withoutMarginBottom={true}
-        />
-        <div className="space-y-4 mt-12">
-          <FAQItem question={'Czy zajmujecie się tworzeniem sklepów internetowych?'}/>
-          <FAQItem question={'Czy mogę posiadać bloga na stronie firmy/portfolio?'}/>
-          <FAQItem question={'Mam pomysł na ciekawą funkcję, czy możecie ją dodać?'}/>
-        </div>
-      </section>
+      <FrequentlyAskedQuestions/>
     </>
   );
 }

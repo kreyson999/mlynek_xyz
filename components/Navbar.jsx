@@ -45,21 +45,18 @@ const Navbar = () => {
             </Link>
           </div>
           <CTAButton/>
+          <button
+          onClick={handleShowingNavbar} 
+          className="grid place-content-center border-blue-dark p-2 rounded-full m-2 md:hidden bg-white z-50">
+            <Image
+              src={isNavbarClosed ? '/icons/menu.svg' : '/icons/close.svg'}
+              alt="Menu"
+              width={32}
+              height={32}
+            />
+          </button>
         </div>
       </div>
-      <button
-      onClick={handleShowingNavbar} 
-      style={{
-        boxShadow: `0px 0px 20px #073A8559`,
-      }}
-      className="fixed border-2 grid place-content-center border-blue-dark p-2 rounded-full bottom-0 right-0 m-2 md:hidden bg-white z-50">
-        <Image
-          src={isNavbarClosed ? '/icons/menu.svg' : '/icons/close.svg'}
-          alt="Menu"
-          width={32}
-          height={32}
-        />
-      </button>
     </nav>
   );
 }

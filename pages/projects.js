@@ -38,7 +38,7 @@ export default function Projects() {
           withoutMarginBottom={true}
           left={true}
           />
-          <p className="text-base md:text-lg">Strona blogowa wykonana przez nas dla KJMM.PL. Na stronie miało nie być stron dla kategorii natomiast musieliśmy dodać akutalnie trwające transmisje na platformie, które są brane z API platformy oraz musieliśmy dodać nową podstronę z turniejami gry Fortnite oraz dodać możliwość wstawiania odnośników do nich na blogu.</p>
+          <p className="text-base md:text-lg">Strona blogowa wykonana przez nas dla KJMM.PL. Na stronie miało nie być stron dla kategorii natomiast musieliśmy dodać akutalnie trwające transmisje z platformy Twitch, które są brane z API platformy oraz musieliśmy dodać nową podstronę z turniejami gry Fortnite oraz dodać możliwość wstawiania odnośników do nich na blogu.</p>
         </div>
       </section>
     </>

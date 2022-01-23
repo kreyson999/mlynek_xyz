@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { FrequentlyAskedQuestions, SectionHeader, SocialMediaLink } from "../components";
+import { FrequentlyAskedQuestions, SocialMediaLink } from "../components";
 
 function Contact() {
   return (
@@ -34,7 +33,7 @@ function Contact() {
             icon={"/icons/mail-blue-light.svg"}
           />
         </div>
-        <div className="bg-blue-dark py-8 px-8 rounded-xl col-span-2">
+        <div className="bg-blue-dark py-8  px-4 md:px-8 rounded-xl col-span-2">
           <form className="flex flex-col">
             <label className="text-base text-white mb-1" htmlFor="name">Twoje imię</label>
             <input className="mb-5 px-2 py-2 focus:outline-2 focus:outline focus:outline-blue-light rounded-lg text-blue-dark border-2 border-white" autoComplete="off" placeholder="Twoje imię" type="text" id="name"/>

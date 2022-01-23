@@ -4,10 +4,10 @@ import { CTAButton } from ".";
 import { useState, useEffect } from 'react'
 
 const Navbar = () => {
-
   const [isNavbarClosed, setIsNavbarClosed] = useState(true)
   
   const handleShowingNavbar = (e) => {
+    if (window.innerWidth > 768) return
     setIsNavbarClosed(state => !state)
   }
 

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const SocialMediaLink = ({link, title, icon, platfrom = 'social mediach'}) => {
   return (
-    <a href={link} className="flex items-center space-x-2 px-2 py-2 border-2 border-blue-light rounded-xl">
+    <a href={link} className="flex items-center space-x-2 px-2 py-2 border-2 border-blue-light rounded-xl transition duration-500 transform hover:translate-x-1">
       <div className="grid place-content-center">
         <Image
           src={icon}

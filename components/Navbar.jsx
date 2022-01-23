@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="relative border-b max-w-screen md:max-w-none z-50">
       <div className="container mx-auto flex justify-between items-center px-2 md:px-6">
         <Link href={'/'}>
-          <a className="text-xl md:text-2xl xl:text-3xl font-bold text-custom-black py-4">MLYNEK.XYZ</a>
+          <a className="text-xl md:text-3xl font-bold text-custom-black py-4">MLYNEK.XYZ</a>
         </Link>
         <div className="flex h-full space-x-2 md:space-x-4 items-center text-custom-black">
           <div 
@@ -49,7 +49,7 @@ const Navbar = () => {
           <CTAButton/>
           <button
           onClick={handleShowingNavbar} 
-          className="grid place-content-center border-blue-dark p-2 rounded-full md:hidden bg-white z-50">
+          className="grid place-content-center border-blue-dark rounded-full md:hidden bg-white z-50">
             <Image
               src={isNavbarClosed ? '/icons/menu.svg' : '/icons/close.svg'}
               alt="Menu"

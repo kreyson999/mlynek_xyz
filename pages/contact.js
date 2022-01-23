@@ -75,6 +75,7 @@ const ContactForm = () => {
       placeholder="Adres e-mail" 
       type={'email'} 
       id="email"
+      name="email"
       required
       value={email}
       onChange={handleOnChangeInput}
@@ -84,6 +85,7 @@ const ContactForm = () => {
       <textarea 
       className="mb-1 px-2 py-2 focus:outline-2 focus:outline focus:outline-blue-light rounded-lg text-blue-dark border-2 border-white" 
       id="message" 
+      name="message"
       cols="30" 
       placeholder="Wiadomość"
       rows="10"
@@ -93,7 +95,7 @@ const ContactForm = () => {
       ></textarea>
       <p className="mb-5 text-red-400 text-sm">{error.message && 'Wiadomość musi być dłuższa niż 12 znaków!'}</p>
       <div className="w-full flex justify-center">
-        <button onClick={handleSubmitingForm} type={'submit'} className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-lg w-fit font-semibold text-white text-lg">Wyślij</button>
+        <button onClick={handleSubmitingForm} type={'submit'} className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-lg w-fit font-semibold text-white text-lg hover:bg-white hover:text-blue-light duration-500">Wyślij</button>
       </div>
     </form>
   )
@@ -132,7 +134,7 @@ export default function Contact({ questions }) {
             icon={"/icons/mail-blue-light.svg"}
           />
         </div>
-        <div className="bg-blue-dark py-8  px-4 md:px-8 rounded-xl col-span-2">
+        <div className="bg-blue-dark  py-4 md:py-8  px-4 md:px-8 rounded-xl col-span-2">
           <ContactForm/>
         </div>
       </section>

@@ -10,7 +10,7 @@ const OfferPageItem = ({title, desc, features, primary}) => {
         <CustomList items={features} primary={primary}/>
       </ul>
       <Link href={'/contact'}>
-        <a className={`block text-center w-full py-2 text-base xl:text-lg font-semibold rounded ${primary ? 'bg-white' : 'bg-gray-light'}`}>
+        <a className={`block text-center w-full py-2 text-base xl:text-lg font-semibold rounded ${primary ? 'bg-white' : 'bg-gray-light'} transition duration-500 transform hover:-translate-y-1`}>
           Skontaktuj się z nami
         </a>
       </Link>

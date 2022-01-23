@@ -12,7 +12,7 @@ export default function Offer() {
           Sprawdź co możemy dla Ciebie wykonać.
         </p>
       </header>
-      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 mb-24 md:mb-32">
+      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 mb-24 md:mb-48">
         <OfferPageItem
         title={"Portfolio"}
         desc={`Idealna opcja dla fotografów, grafików lub artystów.`}
@@ -30,7 +30,7 @@ export default function Offer() {
         features={['Strona zoptymalizowana pod SEO', 'Intuicyjny system CMS', 'Obsługa kliku języków', 'Nowoczesne technologie', 'Wygląd dopasowany do wyobraźni klienta']}
         />
       </section>
-      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-32">
+      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-48">
         <div>
           <SectionHeader title={"Blog"} text={`
             Kładziemy wielki nacisk na nieustanne polepszanie doświadczeń czytelników oraz właściciela bloga.
@@ -62,7 +62,7 @@ export default function Offer() {
             </div>
         </div>
       </section>
-      <section className="bg-gray-40 py-20 mb-32">
+      <section className="bg-gray-40 py-20 md:py-32 mb-48">
         <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="row-start-2 md:row-start-1">
             <div className="relative aspect-video bg-carousel-1 rounded-2xl">
@@ -96,7 +96,7 @@ export default function Offer() {
           </div>
         </div> 
       </section>
-      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-32">
+      <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-48">
         <div>
           <SectionHeader title={"Portfolio"} text={`
             Staramy się, aby z każdą wykonanym  portfolio, były one co raz bardziej przyjazne dla właścicieli oraz wygodniejsze dla przeglądajcych.

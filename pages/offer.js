@@ -1,7 +1,8 @@
-import { CustomList, OfferPageItem, SectionHeader, FAQItem, FrequentlyAskedQuestions } from "../components";
+import { CustomList, OfferPageItem, SectionHeader, FrequentlyAskedQuestions } from "../components";
 import Image from 'next/image'
+import { getQuestions, REVALIDATE_PAGE_CONTENT } from '../lib/graphCMS'
 
-export default function Offer() {
+export default function Offer({questions}) {
   return (
     <>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -128,8 +129,18 @@ export default function Offer() {
           </div>
         </div>
       </section>
-      <FrequentlyAskedQuestions/>
+      <FrequentlyAskedQuestions questions={questions}/>
     </>
   );
 }
- 
+
+export async function getStaticProps() {
+  const questions = await getQuestions()
+
+  return {
+    props: {
+      questions
+    },
+    revalidate: REVALIDATE_PAGE_CONTENT,
+  }
+}

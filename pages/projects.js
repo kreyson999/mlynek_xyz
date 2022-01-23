@@ -1,7 +1,33 @@
 import { Carousel, CarouselItem, SectionHeader } from "../components";
+import { getProjects, REVALIDATE_PAGE_CONTENT } from "../lib/graphCMS";
 
-export default function Projects() {
 
+const Project = ({project}) => {
+  const { name, description, images, url, color } = project
+  return (
+    <section className="flex flex-col w-full py-12">
+      <Carousel color={color}>
+        {images.map((image, index) => (
+          <CarouselItem
+            key={index}
+            image={image.url}
+          />
+        ))}
+      </Carousel>
+      <div className="px-6 max-w-screen-md mx-auto mt-16 mb-48">
+        <SectionHeader
+        title={name}
+        withoutMarginTop={true}
+        withoutMarginBottom={true}
+        left={true}
+        />
+        <p className="text-base md:text-lg">{description}</p>
+      </div>
+    </section>
+  )
+}
+
+export default function Projects({projects}) {
   return (
     <>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -12,35 +38,21 @@ export default function Projects() {
           Tutaj znajdziesz nasze ostatnie projekty.
         </p>
       </header>
-      <section className="flex flex-col w-full py-12">
-        <Carousel>
-          <CarouselItem
-          image={'/images/kjmm_desktop.png'}
-          color={'bg-carousel-0'}
-          />
-          <CarouselItem
-          image={'/images/kjmm_desktop.png'}
-          color={'bg-carousel-1'}
-          />
-          <CarouselItem
-          image={'/images/kjmm_desktop.png'}
-          color={'bg-carousel-2'}
-          />
-          <CarouselItem
-          image={'/images/kjmm_desktop.png'}
-          color={'bg-carousel-2'}
-          />
-        </Carousel>
-        <div className="px-6 max-w-screen-md mx-auto mt-16 mb-48">
-          <SectionHeader
-          title={'KJMM.PL'}
-          withoutMarginTop={true}
-          withoutMarginBottom={true}
-          left={true}
-          />
-          <p className="text-base md:text-lg">Strona blogowa wykonana przez nas dla KJMM.PL. Na stronie miało nie być stron dla kategorii natomiast musieliśmy dodać akutalnie trwające transmisje z platformy Twitch, które są brane z API platformy oraz musieliśmy dodać nową podstronę z turniejami gry Fortnite oraz dodać możliwość wstawiania odnośników do nich na blogu.</p>
-        </div>
-      </section>
+      {projects.map((project, index) => (
+        <Project key={index} project={project}/>
+      ))}
     </>
   );
+}
+
+export async function getStaticProps() {
+  const projects = await getProjects()
+  console.log(projects)
+
+  return {
+    props: {
+      projects,
+    },
+    revalidate: REVALIDATE_PAGE_CONTENT,
+  }
 }

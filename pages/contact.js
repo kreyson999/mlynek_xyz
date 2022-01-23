@@ -1,6 +1,7 @@
 import { FrequentlyAskedQuestions, SocialMediaLink } from "../components";
+import { getQuestions, REVALIDATE_PAGE_CONTENT } from '../lib/graphCMS'
 
-function Contact() {
+export default function Contact({ questions }) {
   return (
     <>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -52,9 +53,18 @@ function Contact() {
           </form>
         </div>
       </section>
-      <FrequentlyAskedQuestions/>
+      <FrequentlyAskedQuestions questions={questions}/>
     </>
   );
 }
 
-export default Contact;
+export async function getStaticProps() {
+  const questions = await getQuestions()
+
+  return {
+    props: {
+      questions
+    },
+    revalidate: REVALIDATE_PAGE_CONTENT,
+  }
+}

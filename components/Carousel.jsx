@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 
-export const CarouselItem = ({image, color, width}) => {
+export const CarouselItem = ({image, color = '#1A6BE3', width}) => {
   return (
-    <div className={`mr-6 relative aspect-video inline-flex items-center justify-center rounded-xl ${color}`} style={{width: width}}>
+    <div 
+    style={{
+      border: `3px solid ${color.hex}`,
+      width: width,
+    }}
+    className={`mr-6 relative aspect-video inline-flex items-center justify-center rounded-xl overflow-hidden`}>
       <Image
       src={image}
       alt='Kjmm website'
@@ -14,7 +19,7 @@ export const CarouselItem = ({image, color, width}) => {
   );
 }
 
-const Carousel = ({children}) => {
+const Carousel = ({children, color}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleChangingSlide = (side) => {
@@ -42,7 +47,7 @@ const Carousel = ({children}) => {
           }}
           className="whitespace-nowrap duration-500">
             {React.Children.map(children, (child, index) => {
-              return React.cloneElement(child, { width: "100%"});
+              return React.cloneElement(child, { width: "100%", color: color});
             })}
           </div>
         </div>

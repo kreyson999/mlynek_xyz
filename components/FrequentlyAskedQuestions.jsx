@@ -1,6 +1,6 @@
 import { SectionHeader, FAQItem } from ".";
 
-const FrequentlyAskedQuestions = () => {
+const FrequentlyAskedQuestions = ({ questions }) => {
   return (
     <section className="max-w-screen-lg mx-auto px-6 mb-32">
       <SectionHeader title={"Pytania"} text={`
@@ -9,9 +9,9 @@ const FrequentlyAskedQuestions = () => {
       withoutMarginBottom={true}
       />
       <div className="space-y-4 mt-12">
-        <FAQItem question={'Czy zajmujecie się tworzeniem sklepów internetowych?'}/>
-        <FAQItem question={'Czy mogę posiadać bloga na stronie firmy/portfolio?'}/>
-        <FAQItem question={'Mam pomysł na ciekawą funkcję, czy możecie ją dodać?'}/>
+        {questions.map(({ question, description }, index) => ( 
+        <FAQItem key={index} question={question} response={description}/>
+        ))}
       </div>
     </section>
   );

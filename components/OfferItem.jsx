@@ -18,14 +18,8 @@ const OfferItem = ({title, text}) => {
         </h3>
         <p className='text-normal xl:text-lg mt-1 xl:mt-2'>{text}</p>
         <Link href={`/offer`}>
-          <a className='bg-white flex w-fit text-black font-semibold items-center w-1/2 justify-center px-4 md:px-8 py-1 text-lg mt-6 xl:mt-8'>
-            <span>Więcej</span>
-            <Image
-            src={"/icons/arrow-right-up.svg"}
-            alt='Więcej'
-            width={32}
-            height={32}
-            />
+          <a className='bg-white text-black w-fit font-semibold w-1/2 px-4 md:px-8 py-2 text-lg mt-6 xl:mt-8'>
+            Więcej
           </a>
         </Link>
       </div>

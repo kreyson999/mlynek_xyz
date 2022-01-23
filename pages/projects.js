@@ -47,7 +47,6 @@ export default function Projects({projects}) {
 
 export async function getStaticProps() {
   const projects = await getProjects()
-  console.log(projects)
 
   return {
     props: {

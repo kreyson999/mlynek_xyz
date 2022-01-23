@@ -1,6 +1,20 @@
 import Link from 'next/link'
+import { useRouter } from "next/router";
+
+const FooterLink = ({href, text}) => {
+  const { asPath } = useRouter()
+
+  const isActive = asPath === href ? true : false
+  return (
+    <Link href={href}>
+      <a className={isActive ? `font-semibold text-blue-light md:text-base` : undefined}>{text}</a>
+    </Link>
+  )
+
+}
 
 const Footer = () => {
+
   return (
     <footer className="bg-black text-white py-8 md:py-16 px-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between md:items-center divide-y md:divide-y-0">
@@ -9,21 +23,11 @@ const Footer = () => {
           <p className="text-gray-light">contact@mlynek.xyz</p>
         </div>
         <div className='text-xl md:text-base flex flex-col md:flex-row space-y-2 py-4 md:space-y-0 md:py-0 md:space-x-4 text-center md:text-left'>
-          <Link href={'/'}>
-            <a className='text-blue-light md:text-base'>Główna</a>
-          </Link>
-          <Link href={'/about'}>
-            <a className=''>O nas</a>
-          </Link>
-          <Link href={'/offer'}>
-            <a className=''>Oferta</a>
-          </Link>
-          <Link href={'/contact'}>
-            <a className=''>Kontakt</a>
-          </Link>
-          <Link href={'/projects'}>
-            <a className=''>Realizacje</a>
-          </Link>
+          <FooterLink href={'/'} text={'Główna'}/>
+          <FooterLink href={'/blog'} text={'Blog'}/>
+          <FooterLink href={'/offer'} text={'Oferta'}/>
+          <FooterLink href={'/contact'} text={'Kontakt'}/>
+          <FooterLink href={'/projects'} text={'Realizacje'}/>
         </div>
       </div>
     </footer>

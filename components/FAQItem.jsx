@@ -16,7 +16,7 @@ const FAQItem = ({question, response = 'Nie znaleźliśmy odpowiedzi na to pytan
         </svg>
       </div>
       {isOpen && (
-        <div className="mt-2 text-gray-dark">
+        <div className="mt-2 text-custom-black">
           {response}
         </div>
       )}

@@ -11,7 +11,7 @@ const HomeHeader = () => {
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
           Wybierając nas masz 100% szansy
-          {""} na to, że otrzymasz stronę internetową,która zapewni
+          {""} na to, że otrzymasz stronę internetową, która zapewni
           Twoim klientom {""}
           <span className="relative whitespace-nowrap">
             niesamowite doświadczenia

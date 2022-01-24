@@ -1,6 +1,7 @@
 import BlogItem from "../../components/BlogItem";
+import { getPosts, REVALIDATE_PAGE_CONTENT } from '../../lib/graphCMS'
 
-function BlogPage() {
+function BlogPage({posts}) {
   return (
     <>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -12,12 +13,23 @@ function BlogPage() {
         </p>
       </header>
       <section className="mx-auto max-w-screen-lg grid grid-cols-3 gap-4">
-        <BlogItem/>
-        <BlogItem/>
-        <BlogItem/>
+        {posts.map((post, index) => (
+          <BlogItem post={post} key={index}/>
+        ))}
       </section>
     </>
   );
 }
 
 export default BlogPage;
+
+export async function getStaticProps() {
+  const posts = await getPosts()
+
+  return {
+    props: {
+      posts
+    },
+    revalidate: REVALIDATE_PAGE_CONTENT
+  }
+}

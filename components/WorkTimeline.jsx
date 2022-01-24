@@ -39,7 +39,7 @@ const WorkTimeline = () => {
           background: `linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(26,107,227,1) 10%, rgba(26,107,227,1) 90%, rgba(255,255,255,1) 100%)`
         }}
         ></div>
-        <div className='absolute rotate-180'
+        {/* <div className='absolute rotate-180'
           style={{
             top: '70px',
           }}
@@ -50,7 +50,7 @@ const WorkTimeline = () => {
           width={48}
           height={48}
           />
-        </div>
+        </div> */}
       </div>
       <TimelineCard 
         active

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { getPost, getPosts } from '../../lib/graphCMS'
-import { Carousel, CarouselItem } from '../../components'
+import { Carousel, CarouselItem, PostContent } from '../../components'
+
 
 export default function BlogPost({post}) {
   const {createdAt, content, color, images, title, author} = post
@@ -15,8 +16,8 @@ export default function BlogPost({post}) {
           Znajdziesz tutaj nasze przemyślenia, poradniki oraz proces tworzenia niektórych projektów.
         </p> */}
       </header>
-      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 mb-32 gap-y-8 lg:gap-y-0">
-        <aside className="lg:col-span-3">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 mb-32 gap-y-8 lg:gap-y-0">
+        <aside className="px-6 lg:col-span-3">
           <div className="sticky top-8 space-y-4">
             <button style={{color: color.hex}} className='hidden lg:block font-semibold duration-500 hover:translate-x-2'>Zabierz mnie do góry</button>
             <div className="flex space-x-2">
@@ -63,8 +64,8 @@ export default function BlogPost({post}) {
               <CarouselItem key={index} image={image.url}/>
             ))}
           </Carousel>
-          <div className='mt-6' dangerouslySetInnerHTML={{__html: content.html}}>
-
+          <div className='mt-6 px-6 lg:px-0 space-y-7'>
+            <PostContent content={content} color={color}/>
           </div>
         </main>
       </div>

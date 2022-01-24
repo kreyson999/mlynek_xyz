@@ -23,9 +23,9 @@ const BlogItem = ({post}) => {
             />
           </div>
         </div>
-        <div className="py-4 px-2">
-          <h2 className="font-semibold">{title}</h2>
-          <p className="text-gray-dark font-semibold text-sm">{new Date(createdAt).toLocaleString('pl', {
+        <div className="py-2 px-2">
+          <h2 className="font-semibold text-lg">{title}</h2>
+          <p className="mt-0.5 text-gray-dark font-semibold text-sm">{new Date(createdAt).toLocaleString('pl', {
             day: '2-digit',
             month: '2-digit',
             year: 'numeric'

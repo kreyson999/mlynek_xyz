@@ -9,10 +9,10 @@ function BlogPage({posts}) {
           Blog
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Znajdziesz tutaj nasze przemyślenia, poradniki oraz proces tworzenia niektórych projektów.
+          Znajdziesz tutaj moje przemyślenia, poradniki oraz proces tworzenia niektórych projektów.
         </p>
       </header>
-      <section className="mx-auto max-w-screen-lg grid grid-cols-3 gap-4">
+      <section className="mx-auto max-w-screen-lg grid grid-cols-1 md:grid-cols-3 gap-4 px-6">
         {posts.map((post, index) => (
           <BlogItem post={post} key={index}/>
         ))}

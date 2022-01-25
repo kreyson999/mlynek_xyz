@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const NavbarLink = ({href, text}) => (
   <Link href={href}>
-    <a className="text-2xl py-2 md:py-0 md:text-base font-semibold bg-white">{text}</a>
+    <a className="text-2xl c py-2 md:text-base font-semibold bg-white md:py-0 duration-500 hover:text-blue-light">{text}</a>
   </Link>
 )
 
@@ -33,15 +33,12 @@ const Navbar = () => {
             <NavbarLink href={'/blog'} text={'Blog'}/>
             <NavbarLink href={'/offer'} text={'Oferta'}/>
             <Link href={'/contact'}>
-              <a className="bg-white flex justify-center text-2xl md:text-base font-semibold flex space-x-1.5 pt-2 md:pt-0 pb-16 md:pb-0">
-                <div className="grid place-content-center">
-                  <Image
-                    src={'/icons/mail.svg'} 
-                    alt="Kontakt"
-                    width={21}
-                    height={21}
-                  />
-                </div>
+              <a className="duration-500 bg-white flex justify-center text-2xl md:text-base items-center font-semibold flex space-x-1.5 pt-2 md:pt-0 pb-16 md:pb-0 changesvgcolor hover:text-blue-light">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#252525" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="duration-500">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
                 <span>Kontakt</span>
               </a>
             </Link>
@@ -49,7 +46,7 @@ const Navbar = () => {
           <CTAButton/>
           <button
           onClick={handleShowingNavbar} 
-          className="grid place-content-center border-blue-dark rounded-full md:hidden bg-white z-50">
+          className="grid place-content-center border-blue-dark rounded-full md:hidden bg-white z-50 p-0.5">
             <Image
               src={isNavbarClosed ? '/icons/menu.svg' : '/icons/close.svg'}
               alt="Menu"

@@ -7,10 +7,10 @@ const HomeHeader = () => {
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-center uppercase text-custom-black">
           Wydajność strony
           <br/>
-          to nasza specjalność.
+          to moja specjalność.
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Wybierając nas masz 100% szansy
+          Wybierając mnie masz 100% szansy
           {""} na to, że otrzymasz stronę internetową, która zapewni
           Twoim klientom {""}
           <span className="relative whitespace-nowrap">

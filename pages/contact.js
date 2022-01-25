@@ -109,7 +109,7 @@ export default function Contact({ questions }) {
           Kontakt
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Napisz do używając formularza lub napisz do nas na jednym z naszych social medii znajdujących się poniżej.
+          Napisz do mnie używając formularza lub na jednym z moich social medii znajdujących się poniżej.
         </p>
       </header>
       <section className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 px-6 gap-y-8 md:gap-4 lg:gap-8">

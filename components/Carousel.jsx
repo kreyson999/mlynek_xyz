@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 
-export const CarouselItem = ({image, color = '#1A6BE3', width}) => {
+export const CarouselItem = ({image, color = '#1A6BE3', width, priority}) => {
   return (
     <div 
     style={{
@@ -14,6 +14,7 @@ export const CarouselItem = ({image, color = '#1A6BE3', width}) => {
       alt='Kjmm website'
       layout='fill'
       className='object-contain'
+      priority={priority ? true : undefined}
       />
     </div>
   );
@@ -47,7 +48,7 @@ const Carousel = ({children, color}) => {
           }}
           className="whitespace-nowrap duration-500">
             {React.Children.map(children, (child, index) => {
-              return React.cloneElement(child, { width: "100%", color: color});
+              return React.cloneElement(child, { width: "100%", color: color, priority: index === 0});
             })}
           </div>
         </div>

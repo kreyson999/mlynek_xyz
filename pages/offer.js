@@ -10,7 +10,7 @@ export default function Offer({questions}) {
           Nasza oferta
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Sprawdź co możemy dla Ciebie wykonać.
+          Sprawdź co mogę dla Ciebie wykonać.
         </p>
       </header>
       <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-4 mb-24 md:mb-48">
@@ -34,7 +34,7 @@ export default function Offer({questions}) {
       <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-48">
         <div>
           <SectionHeader title={"Blog"} text={`
-            Kładziemy wielki nacisk na nieustanne polepszanie doświadczeń czytelników oraz właściciela bloga.
+            Kładę wielki nacisk na nieustanne polepszanie doświadczeń czytelników oraz właściciela bloga.
           `}
           left
           withoutMarginTop={true}
@@ -100,7 +100,7 @@ export default function Offer({questions}) {
       <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-48">
         <div>
           <SectionHeader title={"Portfolio"} text={`
-            Staramy się, aby z każdą wykonanym  portfolio, były one co raz bardziej przyjazne dla właścicieli oraz wygodniejsze dla przeglądajcych.
+            Staram się, aby z każdą wykonanym  portfolio, były one co raz bardziej przyjazne dla właścicieli oraz wygodniejsze dla przeglądajcych.
           `}
           left
           withoutMarginTop={true}

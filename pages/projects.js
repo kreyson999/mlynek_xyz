@@ -35,7 +35,7 @@ export default function Projects({projects}) {
           Realizacje
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Tutaj znajdziesz nasze ostatnie projekty.
+          Tutaj znajdziesz moje ostatnie projekty.
         </p>
       </header>
       {projects.map((project, index) => (

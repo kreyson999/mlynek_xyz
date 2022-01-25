@@ -4,7 +4,7 @@ const FrequentlyAskedQuestions = ({ questions }) => {
   return (
     <section className="max-w-screen-lg mx-auto px-6 mb-32">
       <SectionHeader title={"Pytania"} text={`
-        Masz jakieś pytanie? Sprawdź, czy nie udzieliliśmy już na nie odpowiedzi poniżej. Jeśli nie znajdziesz to co cię nurtuje nie bój się do nas napisać!
+        Masz jakieś pytanie? Sprawdź, czy nie udzieliłem już na nie odpowiedzi poniżej. Jeśli nie znajdziesz to co cię nurtuje nie bój się do mnie napisać!
       `}
       withoutMarginBottom={true}
       />

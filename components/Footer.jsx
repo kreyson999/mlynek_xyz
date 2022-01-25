@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="bg-black text-white py-8 md:py-16 px-6">
       <div className="container mx-auto flex flex-col md:flex-row justify-between md:items-center divide-y md:divide-y-0">
         <div className="flex flex-col text-center md:text-left mb-6 md:mb-0">
-          <h4 className="font-bold text-xl">MLYNEK.XYZ</h4>
+          <h5 className="font-bold text-xl">MLYNEK.XYZ</h5>
           <p className="text-gray-light">contact@mlynek.xyz</p>
         </div>
         <div className='text-xl md:text-base flex flex-col md:flex-row space-y-2 py-4 md:space-y-0 md:py-0 md:space-x-4 text-center md:text-left'>

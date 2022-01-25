@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
       <section className="max-w-screen-xl px-6 mx-auto">
-        <SectionHeader title={"Praca z nami"} text={`
+        <SectionHeader title={"Praca ze mną"} text={`
         Chcę budować swoją pozycję na rynku po przez dobry kontakt z klientem
         oraz spełnianie jego oczekiwań. Poniżej możesz zobaczyć jak przebiega współpraca ze mną.
         `}/>
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
       <section className="relative bg-gray-40 py-20 mt-40">
         <div className="relative pt-0.5 max-w-screen-xl px-6 mx-auto">
-        <SectionHeader title={"Co nas wyróżnia?"} text={`
+        <SectionHeader title={"Co mnie wyróżnia?"} text={`
           Nie chcę być kolejną zwykłą firmą tworzącą strony internetowe
           dlatego stawiam na innowacyjność moich usług.
         `}

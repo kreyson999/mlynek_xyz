@@ -1,24 +1,38 @@
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react'
-import { getPost, getPosts } from '../../lib/graphCMS'
+import { getPost, getPosts, REVALIDATE_PAGE_CONTENT } from '../../lib/graphCMS'
 import { Carousel, CarouselItem, PostContent, ReadTime } from '../../components'
 
+import throttle from 'lodash.throttle';
 
 const BlogMain = ({post}) => {
   const {createdAt, content, color, images, author} = post
   
   const [alreadyScrolled, setAlreadyScrolled] = useState(0)
-  const mainRef = useRef(null)
 
-  // useEffect(() => {
-  //   console.log(mainRef, document.body.offsetHeight)
-  // }, [mainRef])
+  const getProgressWidth = () => {
+    let mainHeight = document.documentElement.scrollTop || document.body.scrollTop
+    let progressWidth = (mainHeight / (document.body.scrollHeight - document.documentElement.clientHeight)) * 100;
+    return progressWidth
+  }
+
+  const handleScrollToTop = () => {
+    window.scrollTo({top: 0, left:0, behavior: 'smooth'});
+  }
+
+  useEffect(() => {
+    const setProgressWidth = () => {
+      setAlreadyScrolled(getProgressWidth())
+    }
+    document.addEventListener('scroll', throttle(setProgressWidth, 500))
+    return () => document.removeEventListener('scroll', throttle(setProgressWidth, 500))
+  }, [])
 
   return (
     <div className="container mx-auto grid grid-cols-1 lg:grid-cols-12 mb-32 gap-y-8 lg:gap-y-0">
       <aside className="px-6 lg:col-span-3">
         <div className="sticky top-8 space-y-4">
-          <button style={{color: color.hex}} className='hidden lg:block font-semibold duration-500 hover:translate-x-2'>Zabierz mnie do góry</button>
+          <button onClick={handleScrollToTop} style={{color: color.hex}} className='hidden lg:block font-semibold duration-500 hover:translate-x-2'>Zabierz mnie do góry</button>
           <div className="flex space-x-2">
             <div className="relative w-12 h-12 rounded-full overflow-hidden bg-yellow-400">
               <Image
@@ -58,7 +72,7 @@ const BlogMain = ({post}) => {
           })}</p>
         </div>
       </aside>
-      <main className="lg:col-start-5 xl:col-start-5 col-span-7 xl:col-span-6" ref={mainRef}>
+      <main className="lg:col-start-5 xl:col-start-5 col-span-7 xl:col-span-6">
         <Carousel color={color}>
           {images.map((image, index) => (
             <CarouselItem key={index} image={image.url}/>
@@ -93,7 +107,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post,
-    }
+    },
+    revalidate: REVALIDATE_PAGE_CONTENT
   }
 }
 

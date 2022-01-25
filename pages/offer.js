@@ -1,10 +1,24 @@
 import { CustomList, OfferPageItem, SectionHeader, FrequentlyAskedQuestions } from "../components";
 import Image from 'next/image'
 import { getQuestions, REVALIDATE_PAGE_CONTENT } from '../lib/graphCMS'
+import Head from "next/head";
 
 export default function Offer({questions}) {
   return (
     <>
+      <Head>
+        <title>MLYNEK.XYZ - Oferta</title>
+        <meta name="description" content={`
+          Znajdziesz tutaj moją ofertę stron internetowych.
+        `}/>
+        <meta property="og:title" content="MLYNEK.XYZ - Oferta" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.mlynek.xyz/offer" />
+        <meta property="og:description" 
+          content={`
+          Znajdziesz tutaj moją ofertę stron internetowych.
+        `}/>
+      </Head>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-center uppercase text-custom-black">
           Nasza oferta
@@ -69,13 +83,13 @@ export default function Offer({questions}) {
             <div className="relative aspect-video bg-carousel-1 rounded-2xl">
               <Image
               src={'/images/comingsoon.png'}
-              alt="Blog Demo"
+              alt="Strona Firmy Demo"
               layout="fill"
               className="object-contain"
               />
             </div>
             <div className="w-full flex justify-center mt-3">
-              <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl" target={'_blank'} rel="noreferrer">DEMO</a>
+              <a href="#" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl" target={'_blank'} rel="noreferrer">DEMO</a>
             </div>
           </div>
           <div className="row-start-1">
@@ -119,13 +133,13 @@ export default function Offer({questions}) {
           <div className="relative aspect-video bg-carousel-2 rounded-2xl">
             <Image
               src={'/images/comingsoon.png'}
-              alt="Blog Demo"
+              alt="Portfolio Demo"
               layout="fill"
               className="object-contain"
               />
           </div>
           <div className="w-full flex justify-center mt-3">
-            <a href="https://kjmm.pl" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl " target={'_blank'} rel="noreferrer">DEMO</a>
+            <a href="#" className="bg-blue-light px-6 xl:px-8 py-1.5 xl:py-2 rounded-full w-fit font-semibold text-white text-lg xl:text-xl " target={'_blank'} rel="noreferrer">DEMO</a>
           </div>
         </div>
       </section>

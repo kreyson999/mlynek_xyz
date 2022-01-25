@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Head from 'next/head'
+
 import { FrequentlyAskedQuestions, SocialMediaLink } from "../components";
 import { getQuestions, REVALIDATE_PAGE_CONTENT } from '../lib/graphCMS'
 
@@ -104,6 +106,19 @@ const ContactForm = () => {
 export default function Contact({ questions }) {
   return (
     <>
+      <Head>
+        <title>MLYNEK.XYZ - Kontakt</title>
+        <meta name="description" content={`
+          Jeśli zdecydowałeś na strone internetowe, możesz się tutaj ze mną skontaktować.
+        `}/>
+        <meta property="og:title" content="MLYNEK.XYZ - Kontakt" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.mlynek.xyz/contact" />
+        <meta property="og:description" 
+          content={`
+            Jeśli zdecydowałeś na strone internetowe, możesz się tutaj ze mną skontaktować.
+          `}/>
+      </Head>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-center uppercase text-custom-black">
           Kontakt

@@ -1,8 +1,22 @@
+import Head from "next/head"
 import { HomeCarousel, ContactButton, SectionHeader, OfferItem, WorkTimeline, DifferenceItem, HomeHeader } from "../components"
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>MLYNEK.XYZ - Blogi, Strony Firmowe, Portfolio</title>
+        <meta name="description" content={`
+          Tworzę wydajne strony internetowe. Blogi, strony firmowe oraz portfolio to moja specjalność! Gwarantuję niesamowite doświadczenia użytkowników na stronie.
+        `}/>
+        <meta property="og:title" content="MLYNEK.XYZ - Blogi, Strony Firmowe, Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.mlynek.xyz/" />
+        <meta property="og:description" 
+          content={`
+          Tworzę wydajne strony internetowe. Blogi, strony firmowe oraz portfolio to moja specjalność! Gwarantuję niesamowite doświadczenia użytkowników na stronie.
+        `}/>
+      </Head>
       <HomeHeader/>
       <HomeCarousel/>
       <section className="max-w-screen-xl mx-auto px-6">

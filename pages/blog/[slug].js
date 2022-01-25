@@ -1,12 +1,16 @@
+import { useEffect, useState } from 'react'
+
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react'
+import Head from 'next/head'
+
 import { getPost, getPosts, REVALIDATE_PAGE_CONTENT } from '../../lib/graphCMS'
 import { Carousel, CarouselItem, PostContent, ReadTime } from '../../components'
 
 import throttle from 'lodash.throttle';
+import getFormattedDate from '../../helpers/getFormattedDate';
 
 const BlogMain = ({post}) => {
-  const {createdAt, content, color, images, author} = post
+  const {title, createdAt, content, color, images, author} = post
   
   const [alreadyScrolled, setAlreadyScrolled] = useState(0)
 
@@ -65,17 +69,13 @@ const BlogMain = ({post}) => {
               className='h-full w-full'></div>
             </div>
           </div>
-          <p className="text-gray-dark text-center lg:text-left font-semibold text-base lg:text-sm">{new Date(createdAt).toLocaleString('pl', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-          })}</p>
+          <p className="text-gray-dark text-center lg:text-left font-semibold text-base lg:text-sm">{getFormattedDate(createdAt)}</p>
         </div>
       </aside>
       <main className="lg:col-start-5 xl:col-start-5 col-span-7 xl:col-span-6">
         <Carousel color={color}>
           {images.map((image, index) => (
-            <CarouselItem key={index} image={image.url}/>
+            <CarouselItem key={index} image={image.url} alt={`Featured Images`}/>
           ))}
         </Carousel>
         <div className='mt-6 px-6 lg:px-0 space-y-7'>
@@ -87,10 +87,20 @@ const BlogMain = ({post}) => {
 }
 
 export default function BlogPost({post}) {
-  const { title } = post
+  const { title, slug, images } = post
 
   return (
     <>
+      <Head>
+        <title>{title} - MLYNEK.XYZ</title>
+        <meta name="description" content={`${getFormattedDate(post.createdAt)} - ${post.excerpt}`}/>
+        <meta property="og:title" content={`${title} - MLYNEK.XYZ`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://www.mlynek.xyz/blog/${slug}`} />
+        <meta property="og:image" content={images[0].url} />
+        <meta property="og:description" 
+          content={`${getFormattedDate(post.createdAt)} - ${post.excerpt}`} />
+      </Head>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
         <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight font-extrabold text-center uppercase text-custom-black">
           {title}

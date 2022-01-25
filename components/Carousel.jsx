@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 
-export const CarouselItem = ({image, color = '#1A6BE3', width, priority}) => {
+export const CarouselItem = ({image, color = '#1A6BE3', width, priority, alt = 'Zdjęcię karuzeli'}) => {
   return (
     <div 
     style={{
@@ -11,7 +11,7 @@ export const CarouselItem = ({image, color = '#1A6BE3', width, priority}) => {
     className={`mr-6 relative aspect-video inline-flex items-center justify-center rounded-xl overflow-hidden`}>
       <Image
       src={image}
-      alt='Kjmm website'
+      alt={alt}
       layout='fill'
       className='object-contain'
       priority={priority ? true : undefined}

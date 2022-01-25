@@ -7,7 +7,7 @@ const OfferItem = ({title, text}) => {
       <div className='w-1/2 sm:w-1/2 lg:w-full'>
         <Image
         src={"/images/offer_item.svg"}
-        alt="Offer"
+        alt={title}
         width={640}
         height={360}
         />

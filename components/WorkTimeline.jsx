@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { useEffect, useState, useRef, useMemo } from 'react';
+import throttle from 'lodash.throttle';
 
 const TimelineCard = ({active, isClient, text, gridStyles, icon = '/icons/timeline/mail-lightblue.svg'}) => {
   return ( 
     <div 
       style={{
         boxShadow: `0px 0px 20px #073A8559`,
-        background: active ? '#1A6BE344' : 'transparent',
+        background: active ? '#1A6BE337' : 'transparent',
       }}
       className={`timelineItem relative duration-500 overflow-hidden col-span-3 xl:col-span-2 w-full px-4 py-4 rounded-xl border-2 border-blue-light ${gridStyles} `}>
       <h3 className="font-extrabold text-xl xl:text-2xl mb-1 uppercase">{isClient ? 'Klient' : 'Ja'}</h3>
@@ -52,30 +53,29 @@ const WorkTimeline = () => {
     const observerTarget = timelineBarRef.current
     if (observerTarget) observer.observe(observerTarget)
 
-    const getScrollingPercent = () => {
+    const setScrollingPercent = () => {
       if(observerTarget) {
         if (!isTimelineIntersecting) return
-        console.log('is intersecting')
         const pos = observerTarget.getBoundingClientRect()
 
         /* substract half of the screen height from height of the element, 
         add the current y position and divide it by height of the element to get percentage */
-        const percentage = Math.floor(((pos.y + (pos.height - (window.innerHeight / 2))) / pos.height) * 100)
+        const percent = Math.floor(((pos.y + (pos.height - (window.innerHeight / 2))) / pos.height) * 100)
         
-        // check if the percentage is between 0 and 100 and change state
-        if (percentage <= 100 && percentage > -1) {
-          setActiveIndex(Math.floor(4.99 - (percentage / 20)))
-          setCurrentPosition(100 - percentage)
+        // check if the percent is between 0 and 100 and change state
+        if (percent <= 100 && percent > -1) {
+          setActiveIndex(Math.floor(4.99 - (percent / 20)))
+          setCurrentPosition(100 - percent)
         }
       }
     }
 
-    document.addEventListener('scroll', getScrollingPercent)
+    document.addEventListener('scroll', throttle(setScrollingPercent, 100))
     return () => {
-      document.removeEventListener('scroll', getScrollingPercent)
+      document.removeEventListener('scroll', throttle(setScrollingPercent, 100))
       if (observerTarget) observer.unobserve(observerTarget)
     }
-  })
+  }, [isTimelineIntersecting, observerOptions])
 
   return (
     <div className="relative grid grid-cols-4 md:grid-cols-7 xl:grid-cols-5 grid-rows-5 gap-y-4 md:gap-y-0">
@@ -92,6 +92,22 @@ const WorkTimeline = () => {
             height: `${currentPosition}%`,
           }}
           className='absolute top-0 bg-blue-light w-full duration-300 ease-linear'>
+          </div>
+          <div 
+          style={{
+            top: -1,
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+          className='w-6 h-6 absolute bg-white border-2 border-blue-dark rounded-full'>
+          </div>
+          <div 
+          style={{
+            bottom: -1,
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+          className='w-6 h-6 absolute bg-white border-2 border-blue-dark rounded-full'>
           </div>
         </div>
       </div>

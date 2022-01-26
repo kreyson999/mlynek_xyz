@@ -22,8 +22,8 @@ export default function Home() {
       <section className="max-w-screen-xl mx-auto px-6">
         <SectionHeader title={"Oferta"} text={`
         Strony tego typu to moja specjalność. Staram się, aby
-        były one wykonane profesjonalnie skupiając szczególną
-        uwagę na doświadczenie użytkownika jak i właściciela.
+        były one wykonane profesjonalnie zwracając szczególną
+        uwagę na doświadczenia użytkownika jak i właściciela.
         `}/>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
           <OfferItem 

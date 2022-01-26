@@ -114,7 +114,7 @@ export default function Offer({questions}) {
       <section className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 md:mb-48">
         <div>
           <SectionHeader title={"Portfolio"} text={`
-            Staram się, aby z każdą wykonanym  portfolio, były one co raz bardziej przyjazne dla właścicieli oraz wygodniejsze dla przeglądajcych.
+            Staram się, aby z każdym wykonanym  portfolio, były one co raz bardziej przyjazne dla właścicieli oraz wygodniejsze dla przeglądających.
           `}
           left
           withoutMarginTop={true}

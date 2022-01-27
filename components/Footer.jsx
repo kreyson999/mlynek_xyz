@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import LocaleContext from '../locales/localeContext'
 
 const FooterLink = ({href, text}) => {
   const { asPath } = useRouter()
@@ -14,6 +16,7 @@ const FooterLink = ({href, text}) => {
 }
 
 const Footer = () => {
+  const t = useContext(LocaleContext)
 
   return (
     <footer className="bg-black text-white py-8 md:py-16 px-6">
@@ -23,11 +26,11 @@ const Footer = () => {
           <p className="text-gray-light">contact@mlynek.xyz</p>
         </div>
         <div className='text-xl md:text-base flex flex-col md:flex-row space-y-2 py-4 md:space-y-0 md:py-0 md:space-x-4 text-center md:text-left'>
-          <FooterLink href={'/'} text={'Główna'}/>
-          <FooterLink href={'/blog'} text={'Blog'}/>
-          <FooterLink href={'/offer'} text={'Oferta'}/>
-          <FooterLink href={'/contact'} text={'Kontakt'}/>
-          <FooterLink href={'/projects'} text={'Realizacje'}/>
+          <FooterLink href={'/'} text={t.nav.home}/>
+          <FooterLink href={'/blog'} text={t.nav.blog}/>
+          <FooterLink href={'/offer'} text={t.nav.offer}/>
+          <FooterLink href={'/contact'} text={t.nav.contact}/>
+          <FooterLink href={'/projects'} text={t.nav.projects}/>
         </div>
       </div>
     </footer>

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from 'next/image'
 import { CTAButton } from ".";
-import { useState } from 'react'
+import { useState } from 'react';
+import { useRouter } from 'next/router'
+
+import { useContext } from "react";
+import LocaleContext from '../locales/localeContext'
 
 
 const NavbarLink = ({href, text}) => (
@@ -12,7 +16,10 @@ const NavbarLink = ({href, text}) => (
 
 const Navbar = () => {
   const [isNavbarClosed, setIsNavbarClosed] = useState(true)
+  const t = useContext(LocaleContext)
   
+  const router = useRouter()
+  const { locale, asPath } = router
 
   const handleShowingNavbar = (e) => {
     if (window.innerWidth > 768) return
@@ -29,9 +36,9 @@ const Navbar = () => {
           <div 
           onClick={handleShowingNavbar} 
           className={`fixed left-0 flex justify-end w-full text-center divide-y md:divide-y-0 flex-col md:flex-row x md:relative md:space-x-4 md:items-center duration-500 ${isNavbarClosed ? '-bottom-full' : 'bottom-0 bg-black-opacity md:bg-white top-0 md:top-auto md:bottom-auto'}`}>
-            <NavbarLink href={'/'} text={'Główna'}/>
-            <NavbarLink href={'/blog'} text={'Blog'}/>
-            <NavbarLink href={'/offer'} text={'Oferta'}/>
+            <NavbarLink href={'/'} text={t.nav.home}/>
+            <NavbarLink href={'/blog'} text={t.nav.blog}/>
+            <NavbarLink href={'/offer'} text={t.nav.offer}/>
             <Link href={'/contact'}>
               <a className="duration-500 bg-white flex justify-center text-2xl md:text-base items-center font-semibold flex space-x-1.5 pt-2 md:pt-0 pb-16 md:pb-0 changesvgcolor hover:text-blue-light">
                 <svg 
@@ -39,11 +46,16 @@ const Navbar = () => {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>Kontakt</span>
+                <span>{t.nav.contact}</span>
               </a>
             </Link>
           </div>
           <CTAButton/>
+          <Link href={asPath} locale={locale === 'pl' ? 'en' : 'pl'}>
+            <a className="font-semibold text-center">
+              {t.nav.lang}
+            </a>
+          </Link>
           <button
           onClick={handleShowingNavbar} 
           className="grid place-content-center border-blue-dark rounded-full md:hidden bg-white z-50 p-0.5">

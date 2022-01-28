@@ -1,25 +1,20 @@
-import { useContext } from "react"
-
 import { ContactButton, CTAButton } from '../components'
-import LocaleContext from '../locales/localeContext'
 
 const HomeHeader = () => {
-  const t = useContext(LocaleContext)
-  
   return (
     <>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-4 md:space-y-6 flex flex-col items-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight font-extrabold text-center uppercase text-custom-black">
-          {t.home.header.title[0]}
+          Wydajność strony
           <br/>
-          {t.home.header.title[1]}
+          to moja specjalność.
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          {t.home.header.desc[0]}
-          {""} {t.home.header.desc[1]} {""}
-          {t.home.header.desc[2]} {""}
+          Wybierając mnie masz 100% szansy
+          {""} na to, że otrzymasz stronę internetową, która zapewni
+          Twoim klientom {""}
           <span className="relative whitespace-nowrap">
-            {t.home.header.desc[3]}
+            niesamowite doświadczenia
             <svg id='animate-length' className="absolute left-0 -bottom-2.5 w-full" width="230" height="12" viewBox="0 0 420 16" fill="none" preserveAspectRatio="xMidYMax meet">
               <path d="M2 2C25.3232 3.07929 48.5889 4.6047 71.903 5.76081C120.965 8.19371 170.073 9.7166 219.305 9.97162C265.498 10.2109 311.407 8.92785 357.411 6.46797C377.031 5.41888 396.566 4.21724 416 2.28929" stroke="#1A6BE3" strokeWidth="4" strokeLinecap="round"/>
             </svg>

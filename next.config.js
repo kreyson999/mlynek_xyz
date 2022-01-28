@@ -4,8 +4,7 @@ module.exports = {
     domains: ['media.graphcms.com'],
   },
   i18n: {
-    locales: ['pl', 'en'],
+    locales: ['pl'],
     defaultLocale: 'pl',
-    localeDetection: true
   },
 }

@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import { useEffect, useState, useRef, useMemo } from 'react';
 import throttle from 'lodash.throttle';
-import LocaleContext from '../locales/localeContext'
-import { useContext } from 'react';
 
 const TimelineCard = ({active, isClient, text, gridStyles, icon = '/icons/timeline/mail-lightblue.svg'}) => {
-  const t = useContext(LocaleContext)
   return ( 
     <div 
       style={{
@@ -13,7 +10,7 @@ const TimelineCard = ({active, isClient, text, gridStyles, icon = '/icons/timeli
         background: active ? '#1A6BE337' : 'transparent',
       }}
       className={`timelineItem relative duration-500 overflow-hidden col-span-3 xl:col-span-2 w-full px-4 py-4 rounded-xl border-2 border-blue-light ${gridStyles} `}>
-      <h3 className="font-extrabold text-xl xl:text-2xl mb-1 uppercase">{isClient ? t.home.sections.howIDeliver.workTimeline.client : t.home.sections.howIDeliver.workTimeline.me}</h3>
+      <h3 className="font-extrabold text-xl xl:text-2xl mb-1 uppercase">{isClient ? 'Klient' : 'Ja'}</h3>
       <p className='text-md xl:text-lg w-5/6'>
         {text}
       </p>
@@ -34,8 +31,6 @@ const TimelineCard = ({active, isClient, text, gridStyles, icon = '/icons/timeli
 }
 
 const WorkTimeline = () => {
-  const t = useContext(LocaleContext)
-
   const [currentPosition, setCurrentPosition] = useState(0) 
   const [activeIndex, setActiveIndex] = useState(-1) 
   const [isTimelineIntersecting, setIsTimelineIntersecting] = useState(false) 
@@ -119,33 +114,46 @@ const WorkTimeline = () => {
       <TimelineCard 
         active={activeIndex === 0}
         isClient={true} 
-        text={t.home.sections.howIDeliver.workTimeline.items[0]}
+        text={`
+          Opisuję najważniejsze informacje co do wyglądu oraz funkcjonalności strony internetowej.
+        `}
         gridStyles={`col-start-2 md:col-start-5  xl:col-start-4`}
       />
       <TimelineCard 
         active={activeIndex === 1}
         isClient={false} 
-        text={t.home.sections.howIDeliver.workTimeline.items[1]}
+        text={`
+          Projektuję wygląd strony starając jak najbardziej dopasować go do opisu klienta.
+          Wybieram najlepsze technologie dla danej strony.
+        `}
         gridStyles={`col-start-2 md:col-start-1`}
         icon='/icons/timeline/monitor.svg'
       />
       <TimelineCard 
         active={activeIndex === 2}
         isClient={true} 
-        text={t.home.sections.howIDeliver.workTimeline.items[2]}
+        text={`
+          Akceptuje wykonany przeze mnie prototyp, ewentualnie wypisuje rzeczy, które mu się nie spodobały.
+        `}
         gridStyles={`col-start-2 md:col-start-5 xl:col-start-4 row-start-3`}
       />
       <TimelineCard
         active={activeIndex === 3} 
         isClient={false} 
-        text={t.home.sections.howIDeliver.workTimeline.items[3]}
+        text={`
+          Zaczynam programować stronę internetową. Zwracam szczególną uwagę na wydajność strony oraz doświadczenia użytkowników.
+          Po skończeniu wysyłam demo do klienta.
+        `}
         gridStyles={`col-start-2 md:col-start-1 row-start-4`}
         icon='/icons/timeline/eye.svg'
       />
       <TimelineCard
         active={activeIndex === 4} 
         isClient={true} 
-        text={t.home.sections.howIDeliver.workTimeline.items[4]}
+        text={`
+          Potwierdza spełnienie jego oczekiwań. Płaci za usługę. 
+          Razem wybieramy najlepszą opcję wstawienia strony do sieci (konfiguracja hostingu, domeny, CMS).
+        `}
         gridStyles={`col-start-2 md:col-start-5 xl:col-start-4 row-start-5`}
       />
     </div>

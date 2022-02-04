@@ -1,6 +1,6 @@
 ### This is my personal website
 
-Demo: [`Click`](https://mlynek.xyz/)
+Demo: [`Click`](https://www.mlynek.xyz/)
 
 Built using:
 

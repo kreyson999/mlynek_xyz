@@ -25,7 +25,6 @@ const Footer = () => {
         <div className='text-xl md:text-base flex flex-col md:flex-row space-y-2 py-4 md:space-y-0 md:py-0 md:space-x-4 text-center md:text-left'>
           <FooterLink href={'/'} text={'Główna'}/>
           <FooterLink href={'/blog'} text={'Blog'}/>
-          <FooterLink href={'/offer'} text={'Oferta'}/>
           <FooterLink href={'/contact'} text={'Kontakt'}/>
           <FooterLink href={'/projects'} text={'Realizacje'}/>
         </div>

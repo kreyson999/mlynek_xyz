@@ -31,7 +31,6 @@ const Navbar = () => {
           className={`fixed left-0 flex justify-end w-full text-center divide-y md:divide-y-0 flex-col md:flex-row x md:relative md:space-x-4 md:items-center duration-500 ${isNavbarClosed ? '-bottom-full' : 'bottom-0 bg-black-opacity md:bg-white top-0 md:top-auto md:bottom-auto'}`}>
             <NavbarLink href={'/'} text={'Główna'}/>
             <NavbarLink href={'/blog'} text={'Blog'}/>
-            <NavbarLink href={'/offer'} text={'Oferta'}/>
             <Link href={'/contact'}>
               <a className="duration-500 bg-white flex justify-center text-2xl md:text-base items-center font-semibold flex space-x-1.5 pt-2 md:pt-0 pb-16 md:pb-0 changesvgcolor hover:text-blue-light">
                 <svg 

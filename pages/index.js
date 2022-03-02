@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { HomeCarousel, ContactButton, SectionHeader, OfferItem, WorkTimeline, DifferenceItem, HomeHeader } from "../components"
+import { HomeCarousel, ContactButton, SectionHeader, WorkTimeline, DifferenceItem, HomeHeader } from "../components"
 
 export default function Home() {
   return (
@@ -19,33 +19,6 @@ export default function Home() {
       </Head>
       <HomeHeader/>
       <HomeCarousel/>
-      <section className="max-w-screen-xl mx-auto px-6">
-        <SectionHeader title={"Oferta"} text={`
-        Strony tego typu to moja specjalność. Staram się, aby
-        były one wykonane profesjonalnie zwracając szczególną
-        uwagę na doświadczenia użytkownika jak i właściciela.
-        `}/>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-          <OfferItem 
-          title={"Blog"}
-          text={`Chciałbyś podzielić się swoją pasją z innymi? 
-          Znasz odpowiedzi na pytania, które niekoniecznie znają inni? 
-          Jeśli jesteś jedną z tych osób to blog będzie idealny dla Ciebie!`}
-          />
-          <OfferItem 
-          title={"Portfolio"}
-          text={`Jesteś fotografem, a może jesteś uzdolniony graficznie? 
-          Wybierając portfolio będziesz mógł dzielić się swoimi pracami ze światem, 
-          a to wszystko w jednym miejscu!`}
-          />
-          <OfferItem 
-          title={"Strona firmy"}
-          text={`Chcesz, aby Twoi klienci mogli przyjrzeć się Twoim usługom wygodnie z domu? 
-          Strona firmy nie tylko zapewni Twoim klientom wygodę, ale także pozwoli trafić Ci
-            do większego grona osób.`}
-          />
-        </div>
-      </section>
       <section className="max-w-screen-xl px-6 mx-auto">
         <SectionHeader title={"Praca ze mną"} text={`
         Chcę budować swoją pozycję na rynku po przez dobry kontakt z klientem

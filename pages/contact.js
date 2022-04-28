@@ -124,12 +124,12 @@ export default function Contact({ questions }) {
           Kontakt
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Napisz do mnie używając formularza lub na jednym z moich social medii znajdujących się poniżej.
+          Skontaktuj się ze mną używając jednej z poniższych opcji.
         </p>
       </header>
-      <section className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 px-6 gap-y-8 md:gap-4 lg:gap-8">
+      <section className="max-w-screen-sm mx-auto grid grid-cols-1 px-6 gap-y-8 md:gap-4 lg:gap-8">
         <div className="flex flex-col space-y-2 row-start-2 md:row-start-1">
-          <h2 className="text-xl text-custom-black">Inne formy kontaktu</h2>
+          {/* <h2 className="text-xl text-custom-black">Inne formy kontaktu</h2> */}
           <SocialMediaLink
             title={'@kreysonfn'}
             platfrom="Twitter"
@@ -143,15 +143,15 @@ export default function Contact({ questions }) {
             icon={"/icons/linkedin.svg"}
           />
           <SocialMediaLink
-            title={'contact@mlynek.xyz'}
+            title={'mlynekjakub05@gmail.com'}
             platfrom="E-mail"
-            link={"mailto:contact@mlynek.xyz"}
+            link={"mailto:mlynekjakub05@gmail.com"}
             icon={"/icons/mail-blue-light.svg"}
           />
         </div>
-        <div className="bg-blue-dark  py-4 md:py-8  px-4 md:px-8 rounded-xl col-span-2">
+        {/* <div className="bg-blue-dark  py-4 md:py-8  px-4 md:px-8 rounded-xl col-span-2">
           <ContactForm/>
-        </div>
+        </div> */}
       </section>
       <FrequentlyAskedQuestions questions={questions}/>
     </>

@@ -21,7 +21,7 @@ export default function Home() {
       <HomeCarousel/>
       <section className="max-w-screen-xl px-6 mx-auto">
         <SectionHeader title={"Praca ze mną"} text={`
-        Chcę budować swoją pozycję na rynku po przez dobry kontakt z klientem
+        Chcę budować swoją pozycję na rynku poprzez dobry kontakt z klientem
         oraz spełnianie jego oczekiwań. Poniżej możesz zobaczyć jak przebiega współpraca ze mną.
         `}/>
         <WorkTimeline/>
@@ -29,7 +29,7 @@ export default function Home() {
       <section className="relative bg-gray-40 py-20 mt-40">
         <div className="relative pt-0.5 max-w-screen-xl px-6 mx-auto">
         <SectionHeader title={"Co mnie wyróżnia?"} text={`
-          Nie chcę być kolejną zwykłą firmą tworzącą strony internetowe
+          Nie chcę być kolejną zwykłą firmą tworzącą strony internetowe,
           dlatego stawiam na innowacyjność moich usług.
         `}
         withoutMarginTop

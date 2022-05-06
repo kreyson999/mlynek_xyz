@@ -109,14 +109,14 @@ export default function Contact({ questions }) {
       <Head>
         <title>MLYNEK.XYZ - Kontakt</title>
         <meta name="description" content={`
-          Jeśli zdecydowałeś na strone internetowe, możesz się tutaj ze mną skontaktować.
+          Jeśli zdecydowałeś na strone internetowe, możesz się tutaj z nami skontaktować.
         `}/>
         <meta property="og:title" content="MLYNEK.XYZ - Kontakt" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mlynek.xyz/contact" />
         <meta property="og:description" 
           content={`
-            Jeśli zdecydowałeś na strone internetowe, możesz się tutaj ze mną skontaktować.
+            Jeśli zdecydowałeś na strone internetowe, możesz się tutaj z nami skontaktować.
           `}/>
       </Head>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -124,18 +124,12 @@ export default function Contact({ questions }) {
           Kontakt
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Skontaktuj się ze mną używając jednej z poniższych opcji.
+          Skontaktuj się z nami używając jednej z poniższych opcji.
         </p>
       </header>
       <section className="max-w-screen-sm mx-auto grid grid-cols-1 px-6 gap-y-8 md:gap-4 lg:gap-8">
         <div className="flex flex-col space-y-2 row-start-2 md:row-start-1">
           {/* <h2 className="text-xl text-custom-black">Inne formy kontaktu</h2> */}
-          <SocialMediaLink
-            title={'@kreysonfn'}
-            platfrom="Twitter"
-            link={"https://twitter.com/kreysonfn"}
-            icon={"/icons/twitter.svg"}
-          />
           <SocialMediaLink
             title={'Jakub Młynek'}
             platfrom="LinkedIn"
@@ -143,9 +137,9 @@ export default function Contact({ questions }) {
             icon={"/icons/linkedin.svg"}
           />
           <SocialMediaLink
-            title={'mlynekjakub05@gmail.com'}
+            title={'stronymlynek@gmail.com'}
             platfrom="E-mail"
-            link={"mailto:mlynekjakub05@gmail.com"}
+            link={"mailto:stronymlynek@gmail.com"}
             icon={"/icons/mail-blue-light.svg"}
           />
         </div>

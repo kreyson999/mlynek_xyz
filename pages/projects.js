@@ -35,14 +35,14 @@ export default function Projects({projects}) {
       <Head>
         <title>MLYNEK.XYZ - Realizacje</title>
         <meta name="description" content={`
-          Znajdziesz tutaj moje ostatnie realizacje.
+          Znajdziesz tutaj nasze ostatnie realizacje.
         `}/>
         <meta property="og:title" content="MLYNEK.XYZ - Realizacje" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.mlynek.xyz/projects" />
         <meta property="og:description" 
           content={`
-          Znajdziesz tutaj moje ostatnie realizacje.
+          Znajdziesz tutaj nasze ostatnie realizacje.
         `}/>
       </Head>
       <header className="container mx-auto px-6 py-12 md:py-16 xl:py-20 space-y-2 flex flex-col items-center">
@@ -50,7 +50,7 @@ export default function Projects({projects}) {
           Realizacje
         </h1>
         <p className="text-center text-base lg:text-lg xl:text-xl max-w-xl text-custom-black">
-          Tutaj znajdziesz moje ostatnie projekty.
+          Tutaj znajdziesz nasze ostatnie projekty.
         </p>
       </header>
       {projects.map((project, index) => (

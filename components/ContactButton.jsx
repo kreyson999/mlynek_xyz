@@ -12,7 +12,7 @@ const ContactButton = () => {
         width={24}
         priority
         />
-        <span className="text-blue-dark font-semibold text-md xl:text-lg">Skontaktuj się ze mną</span>
+        <span className="text-blue-dark font-semibold text-md xl:text-lg">Skontaktuj się z nami</span>
       </a>
     </Link>
   );
